@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> SignUp </title>
+        <script>
+            function genValues(){
+                var ele = document.getElementById("gender");
+                document.getElementById("genderval").value = ele.value;
+                ele = document.getElementById("branch");
+                document.getElementById("branchval").value = ele.value;
+                ele = document.getElementById("acctype");
+                document.getElementById("acctypeval").value = ele.value;
+                if (ele.value == "Saving")
+                {
+                    document.getElementById("interest").value=5
+                }
+                else if(ele.value == "Current")
+                {
+                    document.getElementById("interest").value=3.5
+                }
+                else
+                {
+                    document.getElementById("interest").value=7
+                }
+            }
+        </script>
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+         <title> Info_user </title>
+ 
+         <style>
+            .c1
+            {
+                background-color: rgba(0,0,0,0.5) !important;
+                backface-visibility: hidden;
+                border-radius: 9px;
+                color: white;
+                margin-left: 440px;
+                margin-top: 70px;
+                width: 400px;
+                height: 495px;
+                padding: 10px;
+                box-shadow: 0 8px 8px 0 rgba(255,255,255,0.2);
+            }
+            body{
+                background-image: url("https://i.ibb.co/Y0RXsnm/finalbg.jpg") ;
+                height: 100%;
+                background-repeat: no-repeat;
+                background-size: cover;
+                overflow: hidden;
+                background-position: center;
+                
+            }
+            .c2
+            {
+                color: whitesmoke;
+                font-size: 60px;
+                font-family: cursive;
+                text-align: center;
+                
+            }
+            .c3
+            {
+                height: 1px;
+                background-color: white;
+            }
+            input[type="text"]
+            {
+                border-top: hidden;
+                border-left: hidden;
+                border-right: hidden;
+                background: none;
+                border-bottom-color: green;
+                color: whitesmoke;
+            }
+            input[type="number"]
+            {
+                border-top: hidden;
+                border-left: hidden;
+                border-right: hidden;
+                background: none;
+                border-bottom-color: green;
+                color: white;
+            }
+            input[type="password"]
+            {
+                border-top: hidden;
+                border-left: hidden;
+                border-right: hidden;
+                background: none;
+                border-bottom-color: green;
+                color: white;
+            }
+             
+         </style>
+    </head>
+    <body>
+        
+        
+        <div class="c1">
+            <h2> Sign Up</h2>
+            <hr class="c3">
+            <form action="/user/signup" method="POST">
+
+                <label for="fname">First Name</label> &emsp;
+                <input type="text" id="fname" name="fname" placeholder="First Name" required><br>
+
+                <label for="lname"> Last Name</label>  &emsp;
+                <input type="text" id="lname" name="lname" placeholder="Last Name " required><br>
+                
+                
+                <label for="addr"> Address &nbsp; </label> &emsp;
+                <input type="text" id="addr" name="addr" placeholder="Address" required><br>
+                
+                <label for="dob"> Date of Birth </label> &nbsp;
+                <input type="date" id="dob" name="dob" required style="background-color: white; border-radius: 5px;"><br>
+
+                <label for="pwd">Password</label> &emsp;
+                <input type="password" id="pwd" name="pwd" placeholder="password" required><br>
+
+                <label for="aadhar"> Aadhar No</label> &emsp;
+                <input type="number" id="aadhar" name="aadhar" placeholder="Aadhar Card Number" required><br>
+            
+                Gender :  &emsp;
+
+                <select id="gender" name="gender" style="border-radius: 5px;">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+                <br>
+                <hr class="c3">
+
+                Account type :
+                <select name="acctype" id="acctype" style="border-radius: 5px;">
+                    <option value="Current">Current Account</option>
+                    <option value="Saving">Saving Account</option>
+                    <option value="Fix">Fix Account</option>
+                </select>
+                <br><br>
+        
+                Branch: &emsp; 
+                <select name="branch" id="branch" style="border-radius: 5px;">
+                    <% data["branches"].forEach(function(item,index){ %>
+                        <option value="<%= item.Branch_code %>"> <%= item.Name %> </option>
+                    <% }) %>
+                </select>
+            
+                <br><br>
+            
+                <button type="submit" onclick="return genValues()" class="btn btn-success btn-block">SignUp</button>
+            
+                
+                
+                <input type="hidden" id="genderval" name="genderval">
+                <input type="hidden" id="branchval" name="branchval">
+                <input type="hidden" id="acctypeval" name="acctypeval">
+                <input type="hidden" id="interest" name="interest">
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,16 @@
+{
+    "name": "mySqlApplication",
+    "version": "1.0.0",
+    "dependencies": {
+        "ejs": "^3.0.2",
+        "morgan": "^1.10.0",
+        "mysql": "^2.10.2"
+    },
+    "scripts": {
+        "devStart": "nodemon server.js"
+    },
+    "devDependencies": {
+        "express": "^4.17.1",
+        "nodemon": "^2.0.3"
+    }
+}

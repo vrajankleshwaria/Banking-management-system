@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> addManager </title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <title> Info_user </title>
+        <style>
+            .c1
+            {
+                background-color: rgba(0,0,0,0.5) !important;
+                backface-visibility: hidden;
+                border-radius: 9px;
+                color: white;
+                margin-left: 470px;
+                margin-top: 100px;
+                width: 400px;
+                height: 500px;
+                padding: 10px;
+                box-shadow: 0 8px 8px 0 rgba(255,255,255,0.2);
+
+            }
+            body{
+                background-image: url("https://i.ibb.co/Y0RXsnm/finalbg.jpg") ;
+                height: 100%;
+                background-repeat: no-repeat;
+                background-size: cover;
+                overflow: hidden;
+                background-position: center;
+                
+            }
+            .c2
+            {
+                color: whitesmoke;
+                font-size: 60px;
+                font-family: cursive;
+                text-align: center;
+                
+            }
+            .c3
+            {
+                height: 1px;
+                background-color: white;
+            }
+            input[type="text"]
+            {
+                border-top: hidden;
+                border-left: hidden;
+                border-right: hidden;
+                background: none;
+                border-bottom-color: green;
+                color: white;
+            }
+            input[type="number"]
+            {
+                border-top: hidden;
+                border-left: hidden;
+                border-right: hidden;
+                background: none;
+                border-bottom-color: green;
+                color: white;
+            }
+            input[type="password"]
+            {
+                border-top: hidden;
+                border-left: hidden;
+                border-right: hidden;
+                background: none;
+                border-bottom-color: green;
+                color: white;
+            }
+             
+         </style>
+    </head>
+        <body>
+            <div class="c1">
+                <h2> Add Employee </h2>
+                <hr class="c3">
+                <form action="/employee/addemp" method="POST"> &nbsp;
+                    <label for="fname">First Name </label>
+                    <input type="text" id="fname" name="fname" required> <p></p>&nbsp;
+                    <label for="lname">Last Name </label>
+                    <input type="text" id="lname" name="lname" required> <p></p>&nbsp;
+                    <label for="dob">DOB &nbsp;</label>
+                    <input type="date" id="dob" name="dob" required> <p></p>&nbsp;
+                    <label for="gender">Gender </label>
+                    <input type="text" id="gender" name="gender" required> <p></p>&nbsp;
+                    <label for="id">ID </label>
+                    <input type="text" id="id" name="id" required> <p></p>&nbsp;
+                    <label for="pwd">Password</label>
+                    <input type="password" id="pwd" name="pwd" required> <p></p>&nbsp;
+                    <label for="address">Address </label>
+                    <input type="text" id="address" name="address" required> <br><br>
+                    <button type="submit" class="btn btn-success btn-block">Add employee </button>
+                </form>
+            </div>
+        </body>
+</html>

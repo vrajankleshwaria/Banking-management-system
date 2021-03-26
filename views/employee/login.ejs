@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Login </title>
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    
+    <style>
+         .c1
+        {
+            background-color: rgba(0,0,0,0.5) !important;
+            backface-visibility: hidden;
+            border-radius: 9px;
+            color: white;
+            margin-left: 520px;
+            margin-top: 150px;
+            width: 280px;
+            height: 300px;
+            padding: 10px;
+            box-shadow: 0 8px 8px 0 rgba(255,255,255,0.2);
+            text-align: center;
+        }
+        body{
+                background-image: url("https://i.ibb.co/Y0RXsnm/finalbg.jpg") ;
+                height: 100%;
+                background-repeat: no-repeat;
+                background-size: cover;
+                overflow: hidden;
+                background-position: center;
+                
+            }
+        
+        input
+        {
+            border-radius: 5px;
+            border-bottom-color: green;
+        }
+        .c3
+        {
+            height: 1px;
+            background-color: white;
+        }
+    </style>
+
+    </head>
+
+
+    <body>
+
+        <div class="c1">
+            <h2 style="text-align: left;">Log In </h2>
+            <hr class="c3">
+            <form action="/employee/login" method="POST">
+
+                <hr>
+                <label for="id"></label>
+                <input type="text" id="id" name="id" placeholder="Employee Id" required>
+
+                <hr>
+                <label for="pwd"></label>
+                <input type="password" id="pwd" name="pwd" placeholder="Password" required>
+
+                <hr>
+                <button type="submit" class="btn btn-success btn-lg">Login</button>
+            </form>
+        </div>
+    </body>
+</html>
